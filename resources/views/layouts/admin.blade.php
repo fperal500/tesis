@@ -42,7 +42,7 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
-              
+
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -52,25 +52,25 @@
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    
+
                     <p>
-                      
+
                       alumno de tercero
 
                       <small>www.ies9012.edu.ar</small>
                     </p>
                   </li>
-                  
+
                   <!-- Menu Footer-->
                   <li class="user-footer">
-                    
+
                     <div class="pull-right">
                       <a href="#" class="btn btn-default btn-flat">Cerrar</a>
                     </div>
                   </li>
                 </ul>
               </li>
-              
+
             </ul>
           </div>
 
@@ -81,15 +81,15 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <!-- Sidebar user panel -->
-                    
+
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header"></li>
-            
+
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
-                <span>Almacén</span>
+                <span>Almacénes</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -97,7 +97,7 @@
                 <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Categorías</a></li>
               </ul>
             </li>
-            
+
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
@@ -120,7 +120,7 @@
                 <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
               </ul>
             </li>
-                       
+
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> <span>Acceso</span>
@@ -128,7 +128,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                
+
               </ul>
             </li>
              <li>
@@ -143,7 +143,7 @@
                 <small class="label pull-right bg-yellow">IT</small>
               </a>
             </li>
-                        
+
           </ul>
         </section>
         <!-- /.sidebar -->
@@ -156,10 +156,10 @@
        <!--Contenido-->
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        
+
         <!-- Main content -->
         <section class="content">
-          
+
           <div class="row">
             <div class="col-md-12">
               <div class="box">
@@ -167,7 +167,7 @@
                   <h3 class="box-title">Sistema de Ventas</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    
+
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                   </div>
                 </div>
@@ -180,7 +180,7 @@
                               <!--Fin Contenido-->
                            </div>
                         </div>
-                        
+
                       </div>
                     </div><!-- /.row -->
                 </div><!-- /.box-body -->
@@ -197,13 +197,13 @@
         </div>
       </footer>
 
-      
+
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('js/app.min.js')}}"></script>
-    
+
   </body>
 </html>
