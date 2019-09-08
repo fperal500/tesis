@@ -6,7 +6,7 @@
 <div class="row">
 	
 	<div class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
-		<h3>Nueva Cliente</h3>
+		<h3>Nueva Proveedor</h3>
 		@if (count($errors)>0)
 		<div class="alert alert-danger">
 			
@@ -20,7 +20,7 @@
 		@endif
 	</div>
 </div>
-		{!!Form::open(array('url'=> 'ventas/cliente','method' => 'POST', 'autocomplete' => 'off'))!!}
+		{!!Form::open(array('url'=> 'compras/proveedor','method' => 'POST', 'autocomplete' => 'off'))!!}
 
 		{{Form::token()}}
 
@@ -62,6 +62,8 @@
 
 
 						<option value="PAS">PAS</option>
+
+						
 
 					</select>
 

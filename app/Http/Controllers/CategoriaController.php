@@ -12,13 +12,16 @@ use sistVentas\Http\Requests\CategoriaFormRequest;
 
 use DB;
 
+use Illuminate\Auth\Middleware\Authenticate;
+
 class CategoriaController extends Controller
 {
-    public function __construct()
+   public function __construct()
     {
-        
 
+        $this->middleware('auth');
     }
+
 
     public function index(Request $request)
     {
@@ -51,13 +54,13 @@ class CategoriaController extends Controller
 
     	$categoria->nombre=$request->get('nombre');
 
-		$categoria->descripcion=$request->get('descripcion');
+	    $categoria->descripcion=$request->get('descripcion');
 
 		$categoria->condicion='1';
 
 		$categoria->save();
 
-		return Redirect::to('almacen/categoria');
+      return Redirect::to('almacen/categoria');
 
 
     }
@@ -72,7 +75,7 @@ class CategoriaController extends Controller
     public function edit($id)
     {
 
-    	return view('almacen.categoria.edit', ["categoria"=>Categoria::findOrFail($id)]);
+      return view('almacen.categoria.edit', ["categoria"=>Categoria::findOrFail($id)]);
 
 
     }
@@ -93,7 +96,9 @@ class CategoriaController extends Controller
 
     }
 
+
     public function destroy($id)
+
     {
 
     	$categoria=Categoria::findOrFail($id);
@@ -105,7 +110,5 @@ class CategoriaController extends Controller
     	return Redirect::to('almacen/categoria');
 
     }
-
-
 
 }

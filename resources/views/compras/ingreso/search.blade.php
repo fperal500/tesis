@@ -1,4 +1,4 @@
-	{!! Form::open(array ('url' => 'ventas/cliente' ,'method' => 'GET', 'autocomplete' => 'off' , 'role' => 'search')) !!}
+{!! Form::open(array ('url' => 'compras/ingreso' ,'method' => 'GET', 'autocomplete' => 'off' , 'role' => 'search')) !!}
 
 <div class="form-group">
 	

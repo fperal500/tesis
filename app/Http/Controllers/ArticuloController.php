@@ -15,15 +15,14 @@ use sistVentas\Http\Requests\ArticuloFormRequest;
 use sistVentas\Articulo;
 
 use DB;
-
-
+use Illuminate\Auth\Middleware\Authenticate;
 class ArticuloController extends Controller
 {
-    
+
 		public function __construct()
     {
 
-
+        $this->middleware('auth');
     }
 
     public function index(Request $request)
@@ -60,7 +59,7 @@ class ArticuloController extends Controller
     	$articulo->idcategoria=$request->get('idcategoria');
 
 		$articulo->codigo=$request->get('codigo');
-		
+
 		$articulo->nombre=$request->get('nombre');
 
 		$articulo->stock=$request->get('stock');
@@ -100,6 +99,7 @@ class ArticuloController extends Controller
 
     	$categorias=DB::table('categoria')->where('condicion' , '=' ,'1')->get();
 
+
     	return view('almacen.articulo.edit', ["articulo"=>$articulo,"categorias"=>$categorias]);
 
 
@@ -116,7 +116,7 @@ class ArticuloController extends Controller
     	$articulo->idcategoria=$request->get('idcategoria');
 
 		$articulo->codigo=$request->get('codigo');
-		
+
 		$articulo->nombre=$request->get('nombre');
 
 		$articulo->stock=$request->get('stock');
