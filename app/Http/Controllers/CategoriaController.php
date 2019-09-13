@@ -35,7 +35,7 @@ class CategoriaController extends Controller
     		->where('condicion','=','1')
     		->orderBy('idcategoria','desc')
     		->paginate(7);
-    		return view('almacen.categoria.index',['categorias'=>$categorias,"searchText"=>$query]);
+    		return view('almacen.categoria.index',['categoria'=>$categoria,"searchText"=>$query]);
     	}
 
     }
@@ -48,7 +48,7 @@ class CategoriaController extends Controller
     }
 
 
-    public function store(CategoriaFormRequest $request)
+    public function store (CategoriaFormRequest $request)
     {
     	$categoria=new Categoria;
 
@@ -90,7 +90,7 @@ class CategoriaController extends Controller
 
     	$categoria->descripcion=$request->get('descripcion');
 
-    	$categoria->update();
+    	$categoria->save();
 
     	return Redirect::to('almacen/categoria');
 
@@ -105,9 +105,9 @@ class CategoriaController extends Controller
 
     	$categoria->condicion='0';
 
-    	$categoria->update();
+    	$categoria->save();
 
-    	return Redirect::to('almacen/categoria');
+    	return view('categoria.index');
 
     }
 

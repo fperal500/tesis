@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
+
 Route::resource('almacen/categoria','CategoriaController');
 
 Route::resource('almacen/articulo' , 'ArticuloController');

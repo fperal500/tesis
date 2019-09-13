@@ -34,7 +34,7 @@
 
 				</thead>
 
-				@foreach ($categorias as $cat)
+				@foreach ($categoria as $cat)
 
 
 				<tr>
@@ -53,13 +53,13 @@
 
 				</tr>
 				@include('almacen.categoria.modal')
-				@endforeach	
+				@endforeach
 
 			</table>
 
 		</div>
 
-		{{$categorias->render()}}
+		{{$categoria->render()}}
 
 	</div>
 

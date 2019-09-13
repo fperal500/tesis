@@ -8,6 +8,7 @@ use sistVentas\Http\Requests\VentaFormRequest;
 use Illuminate\Support\Facades\Input;
 use sistVentas\DetalleVenta;
 use DB;
+use sistVentas\Articulo;
 use Carbon\Carbon;
 use Response;
 use Illuminate\Support\Collection;
@@ -46,15 +47,23 @@ class VentaController extends Controller
     {
 
     	$personas=DB::table('persona')->where('tipo_persona','=','Cliente')->get();
-    	$articulos=DB::table('articulo as art')
-    	->join('detalle_ingreso as di','art.idarticulo','=','di.idarticulo')
-    	->select(DB::raw('CONCAT (art.codigo, " ", art.nombre) as articulo'),'art.idarticulo','art.stock',DB::raw('avg(di.precio_venta ) as precio_promedio' ))
-    	->where('art.estado','=','Activo')
-    	->where('art.stock' , '>','0')
-    	->groupBy('articulo','art.idarticulo','art.stock')
-    	->get();
 
-    	return view("ventas.venta.create",["personas"=>$personas,"articulos"=>$articulos]);
+    	// $articulos=Articulo::all()
+
+    // 	 ->join('detalle_venta ','articulo.idarticulo','=','detalle_venta.idarticulo')
+	  //    ->select('articulo.codigo' ,' ', 'articulo.nombre as nombre','articulo.idarticulo','articulo.stock')
+    //   // ->$articulos=DB::raw(avg('detalle_ingreso.precio_venta as precio_promedio'))
+    // //  (DB::raw('CONCAT (art.codigo, " ", art.nombre) as articulo'),'art.idarticulo')
+    // 	->where('estado','=','Activo')
+    // 	->groupBy('articulo','articulo.idarticulo','articulo.stock')
+    // 	->get();
+      $articulos=Articulo::all()
+
+      ->where('estado','=','Activo');
+//dd($articulos);
+
+
+      return view("ventas.venta.create",["personas"=>$personas,"articulos"=>$articulos]);
 
     }
 
@@ -119,7 +128,7 @@ class VentaController extends Controller
     		->join('detalle_venta as dv','v.idventa' , '=' ,'dv.idventa')
     		->select('v.idventa','v.fecha_hora','p.nombre','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado', 'v.total_venta')
     		->where('v.idventa','=', $id)
-            ->groupBy('v.idventa', 'v.fecha_hora', 'p.nombre', 'v.tipo_comprobante', 'v.serie_comprobante', 'v.num_comprobante', 'v.impuesto', 'v.estado','v.total_venta')
+        ->groupBy('v.idventa', 'v.fecha_hora', 'p.nombre', 'v.tipo_comprobante', 'v.serie_comprobante', 'v.num_comprobante', 'v.impuesto', 'v.estado','v.total_venta')
     		->first();
 
     	$detalles=DB::table('detalle_venta as d')
